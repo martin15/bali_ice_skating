@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <% if @meta_description.present? %>
+      <meta name="description" content="<%= @meta_description %>">
+    <% end %>
+    <meta name="author" content="">
+    <title><%= @meta_title ? @meta_title : ApplicationController::BRAND_NAME %></title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', 'style' %>
+    <%= javascript_include_tag 'application' %>
+    <%= yield :javascript_includes %>
+    <%= yield :css_includes %>
+    <!--[if lt IE 9]>
+      <script src="/assets/html5shiv.js"></script>
+      <script src="/assets/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <% adjust_header = "" %>
+    <% unless current_user.nil? %>
+      <% adjust_header = "logged" %>
+      <section class="d-none d-sm-block logged-user">
+        <div class="row">
+          <div class="col-12 user-info-bar">
+            <div class="row">
+              <div class="col-md-6 hidden-xs">&nbsp;</div>
+              <div class="col-md-6 hidden-xs" id="login-pan">
+                <%= raw welcome_text %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    <% end %>
+
+    <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-white" id="nav">
+      <div class="container">
+        <%= link_to root_path, class: "navbar-brand" do %>
+          <%= image_tag "logo.png", class: "img-fluid", style: "width:175px" %>
+        <% end %>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto links">
+            <li class="nav-item active"><%= link_to raw("HOME<span class='slider'></span> "), root_path, class: "underline active" %></li>
+            <li class="nav-item">
+              <%= link_to raw("TICKETING & PRICING<span class='slider'></span> "), ticketing_and_pricing_path, class: "underline" %>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle underline" href="#" id="navbarDropdown" role="button" 
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                ACADEMY<span class='slider'></span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <%= link_to "ACADEMY", academy_path, class: "dropdown-item" %>
+                <%= link_to "COACH PROFILE", academy_path, class: "dropdown-item" %>
+              </div>
+            </li>
+            <li class="nav-item">
+              <%= link_to raw("ICE MATE PASS<span class='slider'></span> "), ice_mate_pass_path, class: "underline"%>
+            </li>
+            <li class="nav-item">
+              <%= link_to raw("FACILITIES<span class='slider'></span> "), facilities_path, class: "underline" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to raw("CONTACT<span class='slider'></span> "), contact_us_path, class: "underline" %>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <%= yield %>
+
+    <footer>
+      <div class="footer-top-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-5 col-md-7 col-sm-7 col-12">
+              <div class="fw-info footer-widget">
+                <div class="flogo">
+                  <%= image_tag "logo-white.png", class: "img-fluid", style: "width:175px" %>
+                </div>
+                <%#*<p class="text">There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form by injected humour.</p>%>
+                <h4 class="social-title">Follow Us</h4>
+                <ul class="social">
+                  <li class="facebook"><a href="#"><%= fa_icon "facebook" %></a></li>
+                  <li class="twitter"><a href="#"><%= fa_icon "twitter" %></a></li>
+                  <li class="google"><a href="#"><%= fa_icon "google-plus" %></a></li>
+                  <li class="linkedin"><a href="#"><%= fa_icon "linkedin" %></a></li>
+                  <li class="instagram"><a href="#"><%= fa_icon "instagram" %></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+              <div class="fw-links footer-widget">
+                <h2 class="title">Useful Links</h2>
+                <ul class="links">
+                  <li>
+                    <%= link_to raw("TICKETING & PRICING<span class='slider'></span> "), "#", 
+                                class: "underline" %>
+                  </li>
+                  <li>
+                    <%= link_to raw("ACADEMY<span class='slider'></span> "), "#", 
+                                class: "underline" %>
+                  </li>
+                  <li>
+                    <%= link_to raw("OCA PASS X<span class='slider'></span> "), "#", 
+                                class: "underline" %>
+                  </li>
+                  <li>
+                    <%= link_to raw("FACILITIES<span class='slider'></span> "), "#", 
+                                class: "underline" %>
+                  </li>
+                  <li>
+                    <%= link_to raw("CONTACT<span class='slider'></span> "), "#", 
+                                class: "underline" %>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-12">
+              <div class="fw-contact footer-widget">
+                <h2 class="title">Contact info</h2>
+                <p class="text">
+                    Hans-Wilhelm-Gasse 0/3, 98051 Schwarzenberg Hans-Wilhelm-Gasse 0/3, 98051
+                    Schwarzenberg Hans-Wilhelm-Gasse 0/3, 98051 Schwarzenberg
+                  </p>
+                <ul class="info">
+                  <li><span><%= fa_icon "phone" %></span>+011-125-541</li>
+                  <li><span><%= fa_icon "envelope" %></i></span>info@example.com</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom-area">
+        <div class="container">
+          <div class="row">
+              <div class="col-12">
+                <div class="copyright">
+                  <p>Copyright © <%= Date.today.year %> <span class="custom-red">
+                  BALI Ice Skating Arena</span>. All Rights Reserved.</p>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- footer
+    <footer id="footer">
+        <div class="social-media">
+            <div class="container">
+              <a href="https://www.facebook.com/remon.fawzi1" class="facebook">
+                <i class="fa fa-facebook-f add-transition"></i>
+              </a>
+              <a href="https://www.instagram.com/remonfawzi/" class="instagram">
+                <i class="fa fa-instagram add-transition"></i>
+              </a>
+              <a href="https://twitter.com/rem0nfawzi" class="twitter">
+                <i class="fa fa-twitter add-transition"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/rem0nfawzi/" class="linked">
+                <i class="fa fa-linkedin add-transition"></i>
+              </a>
+            </div>
+        </div>
+        <div class="footer-text">
+            <div class="container">
+                <p>all copyrights reserved © 2018</p>
+            </div>
+        </div>
+    </footer> -->
+  </body>
+</html>

@@ -1,0 +1,133 @@
+<section class="section-content hcu">
+  <div class="container">
+    <div class="row">  
+      <div class=col-12>
+        <h2>Contact Us</h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-content maps">
+  <div class="container hcu">
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class=col-12>
+        <div class="col-xs-12 map" id="googleMap" style="height: 600px;"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-us-information">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-12">
+        <h3>
+          If you have any questions or comments, or would just like to say hello, <br />
+          please feel free to contact our friendly team
+        </h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-7">
+        <div class="contact-us-form">
+          <%= simple_form_for @contact, url: "contact_us#cu-form", wrapper: :vertical_form,
+                    wrapper_mappings: { check_boxes: :vertical_collection } do |f| %>
+            <div class="row">
+              <div class="col-md-12"><%= f.error_notification %></div>
+              <div class="col-md-6">
+                <%= f.input :name, label_html: { class: 'sr-only' }, placeholder: "Name" %>
+              </div>
+              <div class="col-md-6">
+                <%= f.input :email, label_html: { class: 'sr-only' }, placeholder: "Email" %>
+              </div>
+              <div class="col-md-6">
+                <%= f.input :company_name, label_html: { class: 'sr-only' }, placeholder: "Company Name" %>
+              </div>
+              <div class="col-md-6">
+                <%= f.input :phone, label_html: { class: 'sr-only' }, placeholder: "Phone Number" %>
+              </div> <!-- col-md-4 -->
+
+              <div class="col-md-12">
+                <%= f.input :subject, label_html: { class: 'sr-only' }, placeholder: "Subject" %>
+                <%= f.input :content, label_html: { class: 'sr-only' }, placeholder: "Write Message", 
+                            as: "text", :input_html => { :rows => 7 } %>
+              </div> <!-- col-md-8 -->
+
+              <div class="col-md-12 mb-1">
+                <span class="pull-right"><%= recaptcha_tags %></span>
+              </div> <!-- col-md-12 -->
+
+              <div class="col-md-12">
+                <button type="submit" class="btn btn-primary btn-md pull-right">Send Message</button>
+              </div> <!-- col-md-12 -->
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-12 col-md-5">
+        <div class="location">
+          <div class="row">
+            <div class="col-12 custom-blue mb-3">
+              <h3><span style="font-weight:300;">The</span> <b>Arena</b></h3>
+            </div>
+            <div class="col-12">
+              <div class="row address">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <div class="col-9 col-sm-10 f-14">
+                  <b>Address : </b>Kompleks Rukan Kota Baru Blok AK No.17<br>
+                  <span style="padding-left:64px;display:block;">
+                    Jalan Griya Utama
+                  </span>
+                  <span style="padding-left:64px;display:block;">
+                    Jakarta Utara, Indonesia 14000
+                  </span>
+                </div>
+              </div>
+              <div class="row phone">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <div class="col-10 info f-14"><b>Phone : </b> +62xx xxxx - xxxx</div>
+              </div>
+              <div class="row whatsapp">
+                <i aria-hidden="true">
+                  <img class="img img-fluid" src="/assets/whatsapp-icon-4ccf69d1b874c9417879124b52c0eac5d1e99cf18c10bf187b1badf31c51546b.png" alt="Whatsapp icon">
+                </i>
+                <div class="col-10 info f-14"><b>Whatsapp : </b> +62xxxx - xxxx - xxxx</div>
+              </div>
+              <div class="row instagram">
+                <i aria-hidden="true">
+                  <img class="img img-fluid" src="/assets/ig-icon-1b4d4d3d10c779cc9b155cbe42b72fefb9754a5bba0eefbc1ccff0cc876b1e1b.png" alt="Ig icon">
+                </i>
+                <div class="col-10 info f-14"><b>Instagram : </b>
+                  <a target="_blank" href="https://www.instagram.com/Baliiceskatingarena/">Baliiceskatingarena</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="office-time">
+          <div class="row">
+            <div class="col-12 custom-blue">
+              <h3><b>Operational</b> <span style="font-weight:300;">Hours</span></h3>
+            </div>
+            <span class="col-12">
+              <span class="col-1"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
+              <span class="col-3 no-padding-lr f-14">Monday - Friday</span>
+              <span class="col-5 f-14">10.00 - 22.00 WITA</span>
+            </span>
+            <span class="col-12">
+              <span class="col-1"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
+              <span class="col-3 no-padding-lr f-14">Saturday - Sunday</span>
+              <span class="col-5 f-14">10.00 - 23.00 WITA</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnNJ6kkXnA5of0MVsW36r0meDM0schA4A&callback=initMap" async defer></script>
+
