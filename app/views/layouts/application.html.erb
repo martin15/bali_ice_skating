@@ -52,11 +52,13 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto links">
-            <li class="nav-item active"><%= link_to raw("HOME<span class='slider'></span> "), root_path, class: "underline active" %></li>
-            <li class="nav-item">
+            <li class="nav-item  <%=  menu_active(["home"]) %>">
+              <%= link_to raw("HOME<span class='slider'></span> "), root_path, class: "underline active" %>
+            </li>
+            <li class="nav-item <%=  menu_active(["pages"], ["ticeting_and_pricing"]) %>">
               <%= link_to raw("TICKETING & PRICING<span class='slider'></span> "), ticketing_and_pricing_path, class: "underline" %>
             </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item <%=  menu_active(["pages"], ["academy"]) %> dropdown">
               <a class="nav-link dropdown-toggle underline" href="#" id="navbarDropdown" role="button" 
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 ACADEMY<span class='slider'></span>
@@ -66,13 +68,13 @@
                 <%= link_to "COACH PROFILE", academy_path, class: "dropdown-item" %>
               </div>
             </li>
-            <li class="nav-item">
+            <li class="nav-item <%=  menu_active(["pages"], ["ice_mate_pass"]) %>">
               <%= link_to raw("ICE MATE PASS<span class='slider'></span> "), ice_mate_pass_path, class: "underline"%>
             </li>
-            <li class="nav-item">
+            <li class="nav-item <%=  menu_active(["pages"], ["facilities"]) %>">
               <%= link_to raw("FACILITIES<span class='slider'></span> "), facilities_path, class: "underline" %>
             </li>
-            <li class="nav-item">
+            <li class="nav-item <%=  menu_active(["contact_us"]) %>">
               <%= link_to raw("CONTACT<span class='slider'></span> "), contact_us_path, class: "underline" %>
             </li>
             
@@ -95,11 +97,9 @@
                 <%#*<p class="text">There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form by injected humour.</p>%>
                 <h4 class="social-title">Follow Us</h4>
                 <ul class="social">
-                  <li class="facebook"><a href="#"><%= fa_icon "facebook" %></a></li>
-                  <li class="twitter"><a href="#"><%= fa_icon "twitter" %></a></li>
-                  <li class="google"><a href="#"><%= fa_icon "google-plus" %></a></li>
-                  <li class="linkedin"><a href="#"><%= fa_icon "linkedin" %></a></li>
-                  <li class="instagram"><a href="#"><%= fa_icon "instagram" %></a></li>
+                  <li class="instagram-h">
+                    <%= link_to (fa_icon "instagram"), "https://www.instagram.com/Baliiceskatingarena/", target: "_blank" %>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -108,23 +108,23 @@
                 <h2 class="title">Useful Links</h2>
                 <ul class="links">
                   <li>
-                    <%= link_to raw("TICKETING & PRICING<span class='slider'></span> "), "#", 
+                    <%= link_to raw("TICKETING & PRICING<span class='slider'></span> "), ticketing_and_pricing_path, 
                                 class: "underline" %>
                   </li>
                   <li>
-                    <%= link_to raw("ACADEMY<span class='slider'></span> "), "#", 
+                    <%= link_to raw("ACADEMY<span class='slider'></span> "), academy_path, 
                                 class: "underline" %>
                   </li>
                   <li>
-                    <%= link_to raw("OCA PASS X<span class='slider'></span> "), "#", 
+                    <%= link_to raw("ICE MATE PASS<span class='slider'></span> "), ice_mate_pass_path, 
                                 class: "underline" %>
                   </li>
                   <li>
-                    <%= link_to raw("FACILITIES<span class='slider'></span> "), "#", 
+                    <%= link_to raw("FACILITIES<span class='slider'></span> "), facilities_path, 
                                 class: "underline" %>
                   </li>
                   <li>
-                    <%= link_to raw("CONTACT<span class='slider'></span> "), "#", 
+                    <%= link_to raw("CONTACT<span class='slider'></span> "), contact_us_path, 
                                 class: "underline" %>
                   </li>
                 </ul>
@@ -134,12 +134,12 @@
               <div class="fw-contact footer-widget">
                 <h2 class="title">Contact info</h2>
                 <p class="text">
-                    Hans-Wilhelm-Gasse 0/3, 98051 Schwarzenberg Hans-Wilhelm-Gasse 0/3, 98051
-                    Schwarzenberg Hans-Wilhelm-Gasse 0/3, 98051 Schwarzenberg
+                    Jl. By Pass Ngurah Rai  
+                    Kuta, Kabupaten Badung, Bali 80361
                   </p>
                 <ul class="info">
                   <li><span><%= fa_icon "phone" %></span>+011-125-541</li>
-                  <li><span><%= fa_icon "envelope" %></i></span>info@example.com</li>
+                  <li><span><%= fa_icon "envelope" %></i></span>info.baliiceskatingarena@gmail.com</li>
                 </ul>
               </div>
             </div>

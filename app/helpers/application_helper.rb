@@ -23,4 +23,14 @@ module ApplicationHelper
     return "" if text.blank?
     return "<span class='tg-themetag tg-featuretag'>#{text}</span>"
   end
+
+  def menu_active(ctrs = [], mths = [])
+    ctrs.each do |ctr|
+      return "active" if ctr == params[:controller] && mths.blank?
+      mths.each do |mth|
+        return "active" if mth == params[:action]
+      end
+    end
+  end
+
 end
