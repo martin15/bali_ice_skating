@@ -600,7 +600,7 @@ h1.section-title:after, section.rule-reg .page-header:after {
 .client-nav .content p a { 
   text-decoration: none;
   color: #78e2bd;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 /* ====================== ABOUT US  ======================*/
@@ -923,7 +923,7 @@ section.pub-sk8 .session-time p{
   height: 30px;
   line-height: 17px;
  }
-.add-ons-tab .ao-prc span{ margin: 0 13px; }
+.add-ons-tab .ao-prc span{ margin: 0 12px; }
 .add-ons-tab .ao-prc span.separator { font-size: 40px; font-weight: 100; }
 .add-ons-tab .ao-img .img { margin: 0 auto; display: block}
 
@@ -931,8 +931,8 @@ section.pub-sk8 .session-time p{
 .wht-to-wear .wtw-name{ display: block; color: #555; text-align: center; margin: 10px; font-weight: 600; }
 
 .fcl-ic .fcl-ttl, .fcl-ic .fcl-desc { background-color: #fff;text-align: center; color: #555;}
-.fcl-ic .fcl-ttl { font-size: 17px; padding: 10px; }
-.fcl-ic .fcl-desc { font-size: 12px; padding: 10px; height: 120px;}
+.fcl-ic .fcl-ttl { font-size: 17px; padding: 10px; height: 65px;}
+.fcl-ic .fcl-desc { font-size: 12px; padding: 10px; height: 150px;}
 .operational .opr{ margin-bottom: 50px; }
 .operational .opr-time { font-size: 13px; color: #555;}
 span.tm-bold{ font-size: 20px; font-weight: 800 }
