@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get     "academy" => "pages#academy"
   get     "contact_us" => "contact_us#index"
+  post     "contact_us" => "contact_us#create", as: "save_contact_us"
   get     "facilities" => "pages#facilities"
   get     "ice_mate_pass" => "pages#ice_mate_pass"
   get     "ticketing_and_pricing" => "pages#ticeting_and_pricing"

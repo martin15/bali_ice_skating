@@ -9,7 +9,7 @@ class ContactUsController < ApplicationController
       ContactUsMailer.notification_user(@contact, the_domain).deliver_now\
       ContactUsMailer.notification_admin(@contact, the_domain).deliver_now
       flash[:notice] = 'Message was successfully sent.'
-      redirect_to contact_us_path
+      redirect_to contact_us_path(anchor: "cu-form")
     else
       flash[:error] = "Message failed to send"
       render :action => :index
