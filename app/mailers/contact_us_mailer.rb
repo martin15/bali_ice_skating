@@ -5,9 +5,15 @@ class ContactUsMailer < ApplicationMailer
     mail(:to => contact.email, :subject => contact.subject)
   end
 
-  def notification_admin(contact, domain)
+  def notification_dev(contact, domain)
     @contact = contact
     @domain = domain
     mail(:to => "martin.me15@yahoo.com", :subject => "[Admin] #{contact.subject}")
+  end
+
+  def notification_admin(contact, domain)
+    @contact = contact
+    @domain = domain
+    mail(:to => "info.baliiceskatingarena@gmail.com", :subject => "[Admin] #{contact.subject}")
   end
 end
