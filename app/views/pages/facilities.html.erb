@@ -1,13 +1,24 @@
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag "slick" %>
+  <%= stylesheet_link_tag  "slick", "slick-theme" %>
+<% end %>
+
 <section class="main-section facilities">
   <div class="container">
     <div class="row">
       <div class="col-12">
         <div class="row">
           <div class="col-12 page-header">FACILITIES</div>
-          <div class="col-12 rink">
-            <%= image_tag "rink.png", class: "img img-fluid img-c" %>
+          <div class="col-12 col-md-10 offset-md-1 rink">
+            <div class="fac-slick">
+              <% (1..7).each do |id| %>
+                <div class="item" style="padding:20px;position: relative">
+                  <%= image_tag "our_facility_#{id}.jpg", class: "img-fluid" %>
+                </div>
+              <% end %>
+            </div>
           </div>
-          <div class="col-2 fcl-ic">
+          <!--<div class="col-2 fcl-ic">
             <%= image_tag "cafe.png", class: "img img-fluid" %>
             <div class="col-12 fcl-ttl">RINK SIDE CAFÉ</div>
             <div class="col-12 fcl-desc">
@@ -51,7 +62,7 @@
               <%# Join ice skating academy and learn ice skating in the 
               fun way and bring out the best of you on the ice!. %>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -126,3 +137,14 @@
     </div>
   </div>
 </section>
+
+<script>
+  $(document).ready(function(){
+    $('.fac-slick').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      infinite: false,
+      focusOnSelect: true
+    });
+  });
+</script>

@@ -832,8 +832,9 @@ section.add-ons, section.facilities{
   background-color: #19b9d1;
   padding-top: 10px;
 }
-section.facilities{ padding-top: 50px; }
+section.facilities{ padding-bottom: 30px; }
 
+section.facilities .page-header{ margin-bottom: 30px!important;}
 section.wht-to-wear{
   background-color: #fff;
   background-image: url("bg-outfit-md.png");
@@ -923,6 +924,12 @@ section.pub-sk8 .session-time p{
   height: 30px;
   line-height: 17px;
  }
+@media (max-width: 450px) {
+  .add-ons-tab .ao-prc{
+    height: 50px!important;
+  }
+}
+
 .add-ons-tab .ao-prc span{ margin: 0 12px; }
 .add-ons-tab .ao-prc span.separator { font-size: 40px; font-weight: 100; }
 .add-ons-tab .ao-img .img { margin: 0 auto; display: block}
