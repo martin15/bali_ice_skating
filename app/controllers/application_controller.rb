@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  BRAND_NAME = 'Bali Ice Skating'.freeze
+  BRAND_NAME = 'Bali Ice Skating Arena'.freeze
   before_action :load_meta_description
 
   def meta_title(title = "")
