@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
   private
 
     def load_meta_description
-      @meta_description = "BISA - Bali Ice Skating - Winter Sport - Daily Promo"
+      @meta_description = "BISA - Bali Ice Skating Arena - Winter Sport - Daily Promo"
     end
 
 end
