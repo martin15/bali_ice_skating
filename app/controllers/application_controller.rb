@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   BRAND_NAME = 'Bali Ice Skating'.freeze
+  before_action :load_meta_description
 
   def meta_title(title = "")
     [title, BRAND_NAME].reject(&:empty?).join(' | ')
@@ -21,5 +22,11 @@ class ApplicationController < ActionController::Base
     current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
   helper_method :current_user
+
+  private
+
+    def load_meta_description
+      @meta_description = "BISA - Bali Ice Skating - Winter Sport - Daily Promo"
+    end
 
 end

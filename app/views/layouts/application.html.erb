@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <% if @meta_description.present? %>
-      <meta name="description" content="<%= @meta_description %>">
-    <% end %>
+    <meta name="title" content = "<%= ApplicationController::BRAND_NAME %>">
+    <% @meta_description = (@meta_description + @meta_description_custom) if @meta_description_custom.present? %>
+    <meta name="description" content="<%= @meta_description %>">
     <meta name="author" content="">
     <title><%= @meta_title ? @meta_title : ApplicationController::BRAND_NAME %></title>
     <%= csrf_meta_tags %>
@@ -42,7 +42,7 @@
     <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-white" id="nav">
       <div class="container">
         <%= link_to root_path, class: "navbar-brand" do %>
-          <%= image_tag "logo.png", class: "img-fluid", style: "width:175px" %>
+          <%= image_tag "logo.png", class: "img-fluid", style: "width:175px", alt: "BISA - Bali Ice Skating" %>
         <% end %>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -92,7 +92,7 @@
             <div class="col-lg-5 col-md-7 col-sm-7 col-12">
               <div class="fw-info footer-widget">
                 <div class="flogo">
-                  <%= image_tag "logo-white.png", class: "img-fluid", style: "width:175px" %>
+                  <%= image_tag "logo-white.png", class: "img-fluid", style: "width:175px", alt: "BISA - Bali Ice Skating" %>
                 </div>
                 <%#*<p class="text">There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form by injected humour.</p>%>
                 <h4 class="social-title">Follow Us</h4>
