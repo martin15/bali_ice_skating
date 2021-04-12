@@ -959,6 +959,7 @@ span.tm-bold{ font-size: 20px; font-weight: 800 }
 .btn-blue{ background-image: linear-gradient(to right, #efca00, #f16727); }
 .btn-green{ background-image: linear-gradient(to right, #a0d3e2, #1a93a9); }
 .btn-red{ background-image: linear-gradient(to right, #ff98a2, #651fe5); }
+.btn-yellow{ background-image: linear-gradient(to right, #addeaa, #4abc42); }
 
 .h-icon { 
   font-size: 80px;
